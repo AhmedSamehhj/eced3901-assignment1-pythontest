@@ -1,6 +1,28 @@
 import random
-class TestStudentCode(object):
-  """
+class StudentCode(object):
+    def __init__(self):
+        self.banner_number = "B00920440"
+        self.ConstA = 6
+        self.ConstB = 5
+    def int_banner(self):
+        number = int(self.banner_number[2:])
+        return number
+    def add_b_const(self, argument):
+        try:
+            argument = int(argument)
+        except ValueError:
+            raise TypeError("The passed Argument string cannot be converted into an integer")
+
+        return self.ConstB + argument
+
+    def add_a_or_b_const(self,x, a_or_b="a"):
+        if a_or_b== "a":
+            return self.ConstA + x
+        elif a_or_b == "b":
+            return self.ConstB + x
+        else :
+            raise ValueError("Must Call function with a or b or integer")
+  
   This class will test a simple student code class called StudentCode.
 
   The class must provide:
